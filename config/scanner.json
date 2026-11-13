@@ -1,0 +1,20 @@
+{
+  "market_source": "BINANCE_USDT_M_PERPETUAL",
+  "setup_timeframe": "15m",
+  "execution_timeframe": "5m",
+  "higher_timeframe_context": "not_used_in_auto_scan",
+  "m15_candle_limit": 120,
+  "stage2_max_candidates": 20,
+  "scoring_weights": {
+    "sweep": 15,
+    "rsi_divergence": 10,
+    "bb_reclaim": 10,
+    "choch": 20,
+    "stoch_rsi": 10,
+    "volume": 10,
+    "retest": 10,
+    "regime": 5,
+    "higher_timeframe": 5,
+    "execution": 5
+  }
+}
