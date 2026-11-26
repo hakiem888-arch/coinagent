@@ -1,0 +1,66 @@
+{
+  "specification_version": "1.0",
+  "engine": "CoinAgentX_Hybrid_Adaptive_Strategy_F",
+  "mode": "BALANCED_PAPER_ONLY",
+  "dataset_split": {
+    "calibration_pct": 60,
+    "validation_pct": 20,
+    "out_of_sample_holdout_pct": 20
+  },
+  "walk_forward_folds": 6,
+  "minimum_candles": {
+    "m15": 250,
+    "m5": 250
+  },
+  "frozen_parameters": {
+    "regime_precedence": [
+      "HIGH_VOLATILITY",
+      "BREAKOUT_UP",
+      "BREAKOUT_DOWN",
+      "STRONG_TREND_UP",
+      "STRONG_TREND_DOWN",
+      "TREND_UP",
+      "TREND_DOWN",
+      "RANGE",
+      "TRANSITION"
+    ],
+    "setup_quality_thresholds": {
+      "early_watch": 55,
+      "setup_forming": 65,
+      "entry_candidate": 78
+    },
+    "hard_gates": {
+      "discovery_min_24h_volume_usd": 2000000,
+      "entry_min_24h_volume_usd": 5000000,
+      "entry_min_24h_trades": 500,
+      "max_spread_bps": 10.0,
+      "max_spread_atr_m5": 0.08,
+      "min_depth_10bps_notional_multiple": 5.0,
+      "max_round_trip_cost_r_fraction": 0.20,
+      "sl_buffer_atr_m5": 0.15,
+      "sl_min_atr_m5": 0.75,
+      "sl_max_atr_m5": 2.50,
+      "min_net_rr": 1.50,
+      "max_risk_per_position_pct": 0.25,
+      "max_total_portfolio_risk_pct": 0.50,
+      "max_active_or_pending": 2,
+      "default_leverage": 2,
+      "max_paper_leverage": 3,
+      "daily_loss_stop_pct": 2.0,
+      "consecutive_losses_cooldown_count": 3,
+      "consecutive_losses_cooldown_ms": 3600000
+    },
+    "exits": {
+      "tp1_r": 1.0,
+      "tp1_pct": 0.40,
+      "tp2_r": 2.0,
+      "tp2_pct": 0.35,
+      "runner_pct": 0.25,
+      "tp3_r": 3.0,
+      "trailing_activation_r": 1.5,
+      "trailing_atr_m5_mult": 1.25,
+      "time_exit_half_r_bars": 6,
+      "time_exit_one_r_bars": 12
+    }
+  }
+}
