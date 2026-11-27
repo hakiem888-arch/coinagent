@@ -1,8 +1,0 @@
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.streamlit/secrets.toml
-data/
-*.sqlite
-*.sqlite3
-.env
