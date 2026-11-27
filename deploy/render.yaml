@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: coinagentx-simple-reversal-worker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 worker.py --interval 60 --symbols 50 --initial-equity 1000 --risk-pct 0.5 --leverage 2
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
