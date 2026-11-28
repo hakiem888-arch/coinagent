@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+
+ENV PYTHONUNBUFFERED=1
+ENV SCAN_INTERVAL_SECONDS=60
+ENV SCAN_SYMBOLS=50
+ENV PAPER_INITIAL_EQUITY=1000
+ENV PAPER_RISK_PCT=0.5
+ENV PAPER_LEVERAGE=2
+
+CMD ["python3", "worker.py", "--interval", "60", "--symbols", "50", "--initial-equity", "1000", "--risk-pct", "0.5", "--leverage", "2"]
